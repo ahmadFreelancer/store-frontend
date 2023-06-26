@@ -1,0 +1,336 @@
+body {
+  margin: 0;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; */
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h1,
+h2 {
+  font-weight: bold;
+}
+
+input[type="submit"]:disabled {
+  background-color: #e26dd3 !important;
+}
+
+.myNav {
+  background-color: transparent !important;
+  margin-bottom: -105px;
+}
+
+
+.bgPurple {
+  background: #AE1C9A !important;
+  font-weight: 500;
+}
+
+.fWhite {
+  color: white !important;
+}
+
+.btnYellow {
+  background-color: #d9f24c !important;
+  color: rgb(31, 31, 31);
+  border-radius: 25px;
+  border: none;
+  font-weight: 500;
+  padding: 10px 45px;
+}
+
+.btnPurple {
+  background-color: #AE1C9A !important;
+  color: rgb(31, 31, 31);
+  border-radius: 25px;
+  border: none;
+  font-weight: 500;
+  padding: 10px 45px;
+}
+
+a.active {
+  border-bottom: solid #d9f24c 5px;
+  width: max-content;
+}
+
+
+
+
+
+
+
+/* LOGIN */
+
+
+
+.loginContainer {
+  padding: 145px 0px;
+}
+
+
+.loginWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 472px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 1px 1px 5px -1px black;
+  margin: auto;
+  padding: 45px 35px;
+}
+
+.formLogin {
+  display: flex;
+  flex-direction: column;
+}
+
+.formLogin input {
+  margin: 25px 0px;
+  border: solid rgba(0, 0, 0, 0.08) 1px;
+  border-radius: 8px;
+  padding: 8px 25px;
+}
+
+.formLogin input::placeholder {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+/* Dashboard */
+
+
+
+
+
+
+.dashboardWrapper {
+  background: url('./assets/images/herobg.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 185px 0px;
+  color: rgb(32, 32, 32);
+  font-weight: 900;
+}
+
+.heroSearch {
+  border-radius: 12px;
+  border: none;
+  padding: 8px 65px;
+}
+
+.next {
+  background-color: rgb(44, 44, 44) !important;
+}
+
+.prev {
+  background-color: rgb(44, 44, 44) !important;
+}
+
+
+
+
+
+
+
+/* Card */
+.myBgDark {
+  background-color: rgb(44, 44, 44);
+  padding: 1px 8px;
+  border-radius: 8px;
+  color: white;
+}
+
+.cardWrapper {
+  margin: 0px 0px 35px 0px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 1px 1px 11px -3px rgba(10, 10, 10, 0.7);
+}
+
+.cardImg {
+  width: 100%;
+}
+
+.ViewCartBtn {
+  background-color: #d9f24c;
+  padding: 8px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: black;
+  display: block;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+
+.filterItem {
+  background-color: rgb(44, 44, 44);
+  color: white;
+  border-radius: 12px;
+  padding: 0px 8px;
+  margin: 0px 4px 10px 4px;
+  text-align: center;
+  cursor: pointer;
+  width: 75px;
+  caret-color: transparent;
+  border: none;
+}
+
+
+
+
+
+
+/* Single Product */
+.qtyBtns {
+  margin: 0px 8px;
+  padding: 0px 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: black;
+  border: none;
+  color: white;
+}
+
+
+
+
+/* Cart Modal */
+.paypalBtn {
+  width: 125px;
+  margin: 35px auto 35px auto;
+  padding: 2px 203px 2px 2px;
+}
+
+
+
+
+
+
+
+/* Responsiveness */
+
+
+@media screen and (max-width: 1023px) {
+  .cardWrapper {
+    width: 215px;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+
+  /* ModalItems */
+
+  .modalWrapperRow {
+    flex-direction: column;
+    align-items: center;
+  }
+  .modalDetails{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 25px;
+    border-bottom: 1px solid rgb(85, 85, 85);
+  }
+
+  .navbar-toggler {
+    font-size: 14px;
+  }
+
+  .btnYellow {
+    padding: 8px 22px;
+    font-size: 14px;
+  }
+
+  /* Dashboard */
+  .heroH1 {
+    font-size: 34px !important;
+  }
+
+  .heroPara {
+    font-size: 18px !important;
+  }
+
+  .dashboardWrapper {
+    padding: 100px 0px;
+  }
+
+  .filtersSectionWrapper {
+    flex-direction: column;
+  }
+
+  .leftFilters {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .rightFilters {
+    width: 100%;
+  }
+
+  .filterItem {
+    font-size: 14px;
+    width: 55px;
+  }
+
+  .filtersH4 {
+    font-size: 14px;
+  }
+
+}
+
+
+
+@media screen and (max-width: 480px) {
+
+  /* Login */
+  .loginContainer {
+    padding: 125px 0px;
+  }
+
+  .loginWrapper {
+    width: 95%;
+  }
+
+}
+
+
+
+
+
+@media screen and (max-width: 425px) {
+  /* Login */
+
+  .navbar-toggler {
+    font-size: 12px;
+  }
+
+  .btnYellow {
+    padding: 8px 25px !important;
+    font-size: 14px;
+  }
+
+  .btnPurple {
+    padding: 8px 15px !important;
+    font-size: 14px;
+    width: 75%;
+    margin: auto !important;
+  }
+}
