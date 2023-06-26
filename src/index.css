@@ -240,7 +240,8 @@ a.active {
     flex-direction: column;
     align-items: center;
   }
-  .modalDetails{
+
+  .modalDetails {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -307,6 +308,39 @@ a.active {
 
   .loginWrapper {
     width: 95%;
+  }
+
+  .singleProductRow {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .singleProductRow .detailsCol {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .singleProductRow .detailsCol .myBgDark {
+    margin: 10px 0px 0px 0px!important
+  }
+  .singleProductRow .detailsCol .btnYellow {
+    margin: 10px 0px 0px 0px!important
+  }
+  .singleProductRow .imgCol{
+    width: 75%!important;
+  }
+  .singleProductRow .detailsCol{
+    width: 75%!important;
+  }
+  .singleProductRow hr{
+    border: solid black 1px;
+    width: 70%;
+  }
+  .singleProductRow br{
+    display: none;
   }
 
 }

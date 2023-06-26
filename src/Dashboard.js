@@ -59,6 +59,7 @@ export default function Dashboard() {
             <div className='dashboardWrapper'>
                 <div className='dashboardInner container text-center'>
                     <h1 className='heroH1' style={{ fontSize: "54px" }}>Furniture For Your Sweet Home</h1>
+                    <hr />
                     <p  className="heroPara" style={{ fontSize: "20px" }}>Get your furniture delivered at your doorsteps all day everyday</p>
                     {/* <form onClick={(e) => e.preventDefault()} className='position-relative'>
                         <input onChange={searchBtn} className='heroSearch' type="search" name='heroSearch' value={SearchVal}/>
@@ -74,19 +75,19 @@ export default function Dashboard() {
                     <div className='col-3 leftFilters'>
                         <h4 className='filtersH4'>Filter By: Category</h4> <br />
                         <div>
-                            <input onClick={resetParam} className='filterItem' value='All' />
-                            <input onClick={categoryParam} className='filterItem' value='Table' />
-                            <input onClick={categoryParam} className='filterItem' value='Bed' />
-                            <input onClick={categoryParam} className='filterItem' value='Sofa' />
-                            <input onClick={categoryParam} className='filterItem' value='Chair' />
+                            <input onClick={resetParam} className='filterItem' value='All' readOnly />
+                            <input onClick={categoryParam} className='filterItem' value='Table' readOnly/>
+                            <input onClick={categoryParam} className='filterItem' value='Bed' readOnly/>
+                            <input onClick={categoryParam} className='filterItem' value='Sofa' readOnly/>
+                            <input onClick={categoryParam} className='filterItem' value='Chair' readOnly/>
                         </div>
                         
                         <h4 className='filtersH4'>Filter By: Company</h4> <br />
                         <div>
-                            <input onClick={companyParam} className='filterItem' value='Ikea' />
-                            <input onClick={companyParam} className='filterItem' value='Caressa' />
-                            <input onClick={companyParam} className='filterItem' value='Marcos' />
-                            <input onClick={companyParam} className='filterItem' value='Liddy' />
+                            <input onClick={companyParam} className='filterItem' value='Ikea' readOnly/>
+                            <input onClick={companyParam} className='filterItem' value='Caressa' readOnly/>
+                            <input onClick={companyParam} className='filterItem' value='Marcos' readOnly/>
+                            <input onClick={companyParam} className='filterItem' value='Liddy' readOnly/>
                         </div>
 
                     </div>

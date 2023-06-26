@@ -10,7 +10,7 @@ export default function Header() {
     <div>
 
       <nav className="navbar bgPurple navbar-expand-lg bg-body-tertiary py-0">
-        <div className="container-fluid py-3 px-1">
+        <div className="container-fluid py-3 px-2">
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -24,7 +24,7 @@ export default function Header() {
               </li>
               {
                 token ? <li className="nav-item">
-                  <NavLink className="nav-link mx-3" to={'/dashboard'}>Dashboard</NavLink>
+                  <NavLink className="nav-link mx-3 mb-3" to={'/dashboard'}>Dashboard</NavLink>
                 </li>
                   : null
               }

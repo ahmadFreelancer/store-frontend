@@ -31,12 +31,12 @@ export default function SingleProduct() {
         <div>
 
             <div className='container my-5'>
-                <div className='row'>
-                    <div className='col-6'>
+                <div className='row singleProductRow'>
+                    <div className='col-6 imgCol'>
                         <img className='w-100 shadow rounded' src={singleProduct.url} alt="" />
                     </div>
 
-                    <div className='col-6'>
+                    <div className='col-6 detailsCol'>
                         <span className="myBgDark mb-2 mx-2 d-inline-block">Name: </span>
                         <span>{singleProduct.name}</span> <br />
                         <span className="myBgDark mb-2 mx-2 d-inline-block">Description: </span>
