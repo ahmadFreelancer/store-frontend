@@ -16,7 +16,7 @@ export default function ModalItems({ data }) {
 
                 <div className='col-6 modalDetails'>
                     <span className="myBgDark mb-2 d-inline-block fs-5">Name:</span>
-                    <h4 className='text-capitalize'>{data.name}</h4>
+                    <h4 className='text-capitalize mb-4'>{data.name}</h4>
                     <span className="myBgDark mb-2 d-inline-block fs-5">Price:</span>
                     <h4>{data.price}</h4>
                     <hr />

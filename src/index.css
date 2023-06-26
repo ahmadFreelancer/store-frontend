@@ -367,4 +367,7 @@ a.active {
     width: 75%;
     margin: auto !important;
   }
+  .modalWrapperRow .col-6{
+    width: 90%!important;
+  }
 }

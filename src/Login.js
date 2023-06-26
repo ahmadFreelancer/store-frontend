@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom';
 
 export default function Login() {
     const [email, setEmail] = useState("")
+    const [aaa, setaaa] = useState(false)
     const [password, setPassword] = useState("")
     const [btnDisable, setBtnDisable] = useState(false)
 
@@ -49,6 +50,7 @@ export default function Login() {
     }, [password])
 
     
+    
 
     return (
         <div className='loginContainer' style={{
@@ -57,6 +59,7 @@ export default function Login() {
         }}>
             <div className='loginWrapper'>
                 <h1>Login</h1>
+
                 <form onSubmit={formSubmit} className='formLogin'>
                     <input id='emailId' name='emailN' type="email" placeholder="Your Email" value={email} onChange={(e) => setEmail(e.target.value)} />
                     
