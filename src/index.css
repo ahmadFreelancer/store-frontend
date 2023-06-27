@@ -68,6 +68,70 @@ a.active {
 
 /* LOGIN */
 
+.loginAnimWrapper {
+  display: inline-flex;
+  position: absolute;
+  background: white;
+  border-radius: 25px;
+  margin-top: 15px;
+}
+
+.loginAnimWrapper .dynamic-text {
+  padding-right: 35px;
+  overflow: hidden;
+  height: 90px;
+  line-height: 90px;
+}
+
+.loginAnimWrapper .static-text {
+  font-size: 20px;
+  color: #d9f24c;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  margin-left: 25px;
+}
+
+.dynamic-text li {
+  position: relative;
+  list-style: none;
+  font-size: 20px;
+  top: 0px;
+  animation: slide 6s steps(4) infinite;
+}
+
+@keyframes slide {
+  100% {
+    top: -360px;
+  }
+}
+
+
+.dynamic-text li span {
+  position: relative;
+}
+
+.dynamic-text li span::after {
+  content: '';
+  position: absolute;
+  background-color: white;
+  left: 0;
+  height: 135%;
+  width: 100%;
+  border-left: 2px solid black;
+  margin-top: 30px;
+  animation: typing 1.5s steps(9) infinite;
+}
+
+@keyframes typing {
+  100% {
+    left: 100%;
+    margin: 30px -25px 0 25px;
+  }
+}
+
+
 
 
 .loginContainer {
@@ -324,22 +388,27 @@ a.active {
   }
 
   .singleProductRow .detailsCol .myBgDark {
-    margin: 10px 0px 0px 0px!important
+    margin: 10px 0px 0px 0px !important
   }
+
   .singleProductRow .detailsCol .btnYellow {
-    margin: 10px 0px 0px 0px!important
+    margin: 10px 0px 0px 0px !important
   }
-  .singleProductRow .imgCol{
-    width: 75%!important;
+
+  .singleProductRow .imgCol {
+    width: 75% !important;
   }
-  .singleProductRow .detailsCol{
-    width: 75%!important;
+
+  .singleProductRow .detailsCol {
+    width: 75% !important;
   }
-  .singleProductRow hr{
+
+  .singleProductRow hr {
     border: solid black 1px;
     width: 70%;
   }
-  .singleProductRow br{
+
+  .singleProductRow br {
     display: none;
   }
 
@@ -367,7 +436,8 @@ a.active {
     width: 75%;
     margin: auto !important;
   }
-  .modalWrapperRow .col-6{
-    width: 90%!important;
+
+  .modalWrapperRow .col-6 {
+    width: 90% !important;
   }
 }

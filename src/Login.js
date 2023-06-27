@@ -40,37 +40,50 @@ export default function Login() {
     }, [])
 
 
-    useEffect(() =>{
-        if(password === ''){
+    useEffect(() => {
+        if (password === '') {
             setBtnDisable(true)
         }
-        else{
+        else {
             setBtnDisable(false)
         }
     }, [password])
 
-    
-    
+
+
 
     return (
-        <div className='loginContainer' style={{
-            backgroundImage: `url(${bgLogin})`, backgroundPosition: "center center",
-            backgroundRepeat: "no-repeat", backgroundSize: "cover"
-        }}>
-            <div className='loginWrapper'>
-                <h1>Login</h1>
-
-                <form onSubmit={formSubmit} className='formLogin'>
-                    <input id='emailId' name='emailN' type="email" placeholder="Your Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                    
-                    <input type="password" placeholder="Your Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                    
-                    <input className='btnPurple' type="submit" placeholder="Submit" disabled={btnDisable}/>
-                    
-                    <div className='text-center my-2'>Dont't have an account ? <NavLink to={'/register'} >Sign Up Free</NavLink> </div>
-                </form>
+        <>
+            <div style={{display: 'flex', justifyContent: 'center'}}>
+                <div className='loginAnimWrapper'>
+                    <div className='static-text'>Please</div>
+                    <ul className='dynamic-text'>
+                        <li><span>1. REGISTER</span></li>
+                        <li><span>2. and</span></li>
+                        <li><span>3. THEN</span></li>
+                        <li><span>4. LOGIN..</span></li>
+                    </ul>
+                </div>
             </div>
 
-        </div>
+            <div className='loginContainer' style={{
+                backgroundImage: `url(${bgLogin})`, backgroundPosition: "center center",
+                backgroundRepeat: "no-repeat", backgroundSize: "cover"
+            }}>
+                <div className='loginWrapper'>
+                    <h1>Login</h1>
+
+                    <form onSubmit={formSubmit} className='formLogin'>
+                        <input id='emailId' name='emailN' type="email" placeholder="Your Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+
+                        <input type="password" placeholder="Your Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+
+                        <input className='btnPurple' type="submit" placeholder="Submit" disabled={btnDisable} />
+
+                        <div className='text-center my-2'>Dont't have an account ? <NavLink to={'/register'} >Sign Up Free</NavLink> </div>
+                    </form>
+                </div>
+            </div>
+        </>
     )
 }
