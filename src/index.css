@@ -55,6 +55,37 @@ input[type="submit"]:disabled {
   padding: 10px 45px;
 }
 
+.watchBtn {
+  background-color: #d9f24c;
+  width: 35px;
+  height: 35px;
+  border-radius: 25px;
+  position: fixed !important;
+  bottom: 15px;
+  right: 10px;
+  border: none;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+  display: flex;
+  color: black;
+  padding: 2px;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  display: none;
+  animation: shake 1s infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); padding: 4px;}
+  100% { transform: translate(1px, 1px) rotate(0deg); padding: 2px;}
+}
+
+.watchBtn:hover {
+  background-color: #f4ffb5;
+  border: 0.3px solid black;
+}
+
 a.active {
   border-bottom: solid #d9f24c 5px;
   width: max-content;
@@ -175,6 +206,42 @@ a.active {
 /* Dashboard */
 
 
+
+.videoWrapper {
+  width: 500px;
+  margin: auto;
+}
+
+.videoWrapper .videoInner {
+  width: 100%;
+  height: 250px;
+}
+
+.videoWrapper .videoContent {
+  width: 100%;
+  height: 100%;
+}
+
+.videoWrapperHide {
+  transition: all 0.6s;
+  transform: translate(0px, 150px);
+  opacity: 0;
+  display: none;
+}
+
+.videoWrapperShow {
+  transition: all 0.6s;
+  transform: translate(0px, 50vh);
+  /* opacity: 1; */
+  display: block;
+}
+
+.videoWrapperBgDiv {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
 
 
 
@@ -410,6 +477,15 @@ a.active {
 
   .singleProductRow br {
     display: none;
+  }
+
+  .videoWrapper {
+    width: 95%;
+  }
+
+  .videoWrapper .videoInner {
+    width: 100%;
+    height: 155px;
   }
 
 }

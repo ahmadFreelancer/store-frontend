@@ -3,10 +3,12 @@ import { useNavigate } from "react-router-dom";
 import "./index.css"
 import { UseProductContext } from './context/ProductsContext';
 import Card from './components/Card';
+import { AiOutlineYoutube } from "react-icons/ai"
 
 
 export default function Dashboard() {
     const { products, page, categoryQuery, companyQuery, sortQuery, resetQuery, prevPageFunc, nextPageFunc, nextBtnDisable } = UseProductContext();
+    const [autoPlay, setAutoplay] = useState('')
 
     const navigate = useNavigate();
 
@@ -46,25 +48,41 @@ export default function Dashboard() {
     const nextPage = () => {
         nextPageFunc()
     }
-    // const searchBtn = (e) =>{
-    //     let val = e.target.value;
-    //     heroSearch(val)
-    // }
-    // const SearchClearBtn = () =>{
-    //     SearchClear()
-    // }
+
+    useEffect(() => {
+        setTimeout(() => {
+            let btn = document.querySelector(".watchBtn");
+            btn.style.display = "flex"
+            btn.click()
+        }, 3000);
+    }, [])
+
 
     return (
         <>
+            <button onClick={() => {
+                setAutoplay('embed/LPtZYrM-Om4?rel=0')
+            }} type="button" className="watchBtn position-absolute" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <AiOutlineYoutube className='w-100' />
+            </button>
+            <div onClick={() => setAutoplay('')} className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content border-0">
+                        <div className="videoWrapperShow videoWrapper d-flex justify-content-center align-items-center">
+                            <div className="videoInner embed-responsive embed-responsive-16by9 position-absolute">
+                                <iframe className="videoContent embed-responsive-item" src={`https://www.youtube.com/${autoPlay}`} allowFullScreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <div className='dashboardWrapper'>
                 <div className='dashboardInner container text-center'>
                     <h1 className='heroH1' style={{ fontSize: "54px" }}>Furniture For Your Sweet Home</h1>
                     <hr />
-                    <p  className="heroPara" style={{ fontSize: "20px" }}>Get your furniture delivered at your doorsteps all day everyday</p>
-                    {/* <form onClick={(e) => e.preventDefault()} className='position-relative'>
-                        <input onChange={searchBtn} className='heroSearch' type="search" name='heroSearch' value={SearchVal}/>
-                        <button onClick={SearchClearBtn} className='heroSearchClear'>X</button>
-                    </form> */}
+                    <p className="heroPara" style={{ fontSize: "20px" }}>Get your furniture delivered at your doorsteps all day everyday</p>
                 </div>
             </div>
             <div>
@@ -76,18 +94,18 @@ export default function Dashboard() {
                         <h4 className='filtersH4'>Filter By: Category</h4> <br />
                         <div>
                             <input onClick={resetParam} className='filterItem' value='All' readOnly />
-                            <input onClick={categoryParam} className='filterItem' value='Table' readOnly/>
-                            <input onClick={categoryParam} className='filterItem' value='Bed' readOnly/>
-                            <input onClick={categoryParam} className='filterItem' value='Sofa' readOnly/>
-                            <input onClick={categoryParam} className='filterItem' value='Chair' readOnly/>
+                            <input onClick={categoryParam} className='filterItem' value='Table' readOnly />
+                            <input onClick={categoryParam} className='filterItem' value='Bed' readOnly />
+                            <input onClick={categoryParam} className='filterItem' value='Sofa' readOnly />
+                            <input onClick={categoryParam} className='filterItem' value='Chair' readOnly />
                         </div>
-                        
+
                         <h4 className='filtersH4'>Filter By: Company</h4> <br />
                         <div>
-                            <input onClick={companyParam} className='filterItem' value='Ikea' readOnly/>
-                            <input onClick={companyParam} className='filterItem' value='Caressa' readOnly/>
-                            <input onClick={companyParam} className='filterItem' value='Marcos' readOnly/>
-                            <input onClick={companyParam} className='filterItem' value='Liddy' readOnly/>
+                            <input onClick={companyParam} className='filterItem' value='Ikea' readOnly />
+                            <input onClick={companyParam} className='filterItem' value='Caressa' readOnly />
+                            <input onClick={companyParam} className='filterItem' value='Marcos' readOnly />
+                            <input onClick={companyParam} className='filterItem' value='Liddy' readOnly />
                         </div>
 
                     </div>
