@@ -4,11 +4,12 @@ import "./index.css"
 import { UseProductContext } from './context/ProductsContext';
 import Card from './components/Card';
 import { AiOutlineYoutube } from "react-icons/ai"
+import video from "./assets/video/video.mp4"
 
 
 export default function Dashboard() {
     const { products, page, categoryQuery, companyQuery, sortQuery, resetQuery, prevPageFunc, nextPageFunc, nextBtnDisable } = UseProductContext();
-    const [autoPlay, setAutoplay] = useState('')
+
 
     const navigate = useNavigate();
 
@@ -48,29 +49,40 @@ export default function Dashboard() {
     const nextPage = () => {
         nextPageFunc()
     }
+    
+    const pauseVideo = () =>{
+        let player = document.querySelector('.videoContent');
+        player.pause()
+    }
 
     useEffect(() => {
         setTimeout(() => {
             let btn = document.querySelector(".watchBtn");
-            btn.style.display = "flex"
             btn.click()
         }, 3000);
     }, [])
 
+    
 
     return (
         <>
-            <button onClick={() => {
-                setAutoplay('embed/LPtZYrM-Om4?rel=0')
-            }} type="button" className="watchBtn position-absolute" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" className="watchBtn position-absolute" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <AiOutlineYoutube className='w-100' />
             </button>
-            <div onClick={() => setAutoplay('')} className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div onClick={pauseVideo} className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content border-0">
                         <div className="videoWrapperShow videoWrapper d-flex justify-content-center align-items-center">
                             <div className="videoInner embed-responsive embed-responsive-16by9 position-absolute">
-                                <iframe className="videoContent embed-responsive-item" src={`https://www.youtube.com/${autoPlay}`} allowFullScreen></iframe>
+
+
+
+                                <video className='videoContent' controls>
+                                    <source src={video} type="video/mp4"/>
+                                    Your browser does not support the video tag.
+                                </video>
+
+
                             </div>
                         </div>
                     </div>

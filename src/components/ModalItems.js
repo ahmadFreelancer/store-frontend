@@ -4,8 +4,6 @@ import "../index.css"
 
 // ModalItems is Child of <CartModal>
 export default function ModalItems({ data }) {
-    
-    console.log(data)
 
     return (
         <>
