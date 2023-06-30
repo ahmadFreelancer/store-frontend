@@ -81,6 +81,7 @@ export default function Dashboard() {
                                     <source src={video} type="video/mp4"/>
                                     Your browser does not support the video tag.
                                 </video>
+                                <a className='videoText' href="https://youtu.be/G6KRAfdW97s" target='_'>Watch on YouTube</a>
 
 
                             </div>
