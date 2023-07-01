@@ -76,16 +76,16 @@ export default function Login() {
                 <div className='loginWrapper'>
                     <h1>Login</h1>
 
+                    {
+                        spinner === true ? <div className="spinner-border text-center m-auto" role="status"></div> : null
+                    }
+
                     <form onSubmit={formSubmit} className='formLogin'>
                         <input id='emailId' name='emailN' type="email" placeholder="Your Email" value={email} onChange={(e) => setEmail(e.target.value)} />
 
                         <input type="password" placeholder="Your Password" value={password} onChange={(e) => setPassword(e.target.value)} />
 
                         <input className='btnPurple' type="submit" placeholder="Submit" disabled={btnDisable} />
-
-                        {
-                            spinner === true ? <div className="spinner-border text-center m-auto" role="status"></div> : null
-                        }
 
 
                         <div className='text-center my-2'>Dont't have an account ? <NavLink to={'/register'} >Sign Up Free</NavLink> </div>
