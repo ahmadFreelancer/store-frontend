@@ -6,15 +6,16 @@ import { NavLink } from 'react-router-dom';
 
 export default function Login() {
     const [email, setEmail] = useState("")
-    const [aaa, setaaa] = useState(false)
     const [password, setPassword] = useState("")
     const [btnDisable, setBtnDisable] = useState(false)
+    const [spinner, setSpinner] = useState(false)
 
     const navigate = useNavigate();
 
 
     const formSubmit = async (e) => {
         e.preventDefault();
+        setSpinner(true)
 
         const response = await axios.post(
             `https://storebackend-ldjb.onrender.com/login`,
@@ -22,15 +23,17 @@ export default function Login() {
             { headers: { 'Content-Type': 'application/json' } }
         )
         const data = response.data;
+        setSpinner(false)
         // console.log(data)
         if (data.authToken) {
             sessionStorage.setItem('token', data.authToken)
-            alert("Logged In");
+
             navigate("/dashboard");
         }
         else if (data.authToken === false) {
             alert("Use right credentials please")
         }
+
     }
 
     useEffect(() => {
@@ -54,7 +57,7 @@ export default function Login() {
 
     return (
         <>
-            <div style={{display: 'flex', justifyContent: 'center'}}>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <div className='loginAnimWrapper'>
                     <div className='static-text'>Please</div>
                     <ul className='dynamic-text'>
@@ -79,6 +82,11 @@ export default function Login() {
                         <input type="password" placeholder="Your Password" value={password} onChange={(e) => setPassword(e.target.value)} />
 
                         <input className='btnPurple' type="submit" placeholder="Submit" disabled={btnDisable} />
+
+                        {
+                            spinner === true ? <div className="spinner-border text-center m-auto" role="status"></div> : null
+                        }
+
 
                         <div className='text-center my-2'>Dont't have an account ? <NavLink to={'/register'} >Sign Up Free</NavLink> </div>
                     </form>
